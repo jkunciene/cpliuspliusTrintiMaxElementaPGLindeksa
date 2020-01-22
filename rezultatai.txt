@@ -1,0 +1,4 @@
+Nuskaite
+7 9 7 4 9 3 9 
+Max elementu indeksu masyvas
+1 4 6 

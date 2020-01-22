@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1579699606 source:c:\users\moksleivis\desktop\maxindeksai\main.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	<algorithm>
+

@@ -11,17 +11,21 @@ ofstream out("rezultatai.txt");
 void skaitomPusinam(vector<int> &A);
 void spausdink(vector<int> A, string text);
 void lyginu(vector<int> A, int &didziausias);
-void indeksas(vector<int> A, vector<int> &B, int &didziausias);
+void indeksas(vector<int> A, vector<int> &B, int didziausias);
+void trynimas(vector<int> &A, vector<int> &B);
 
 int main()
 {
 
-    vector<int> M, Ap;
+    vector<int> M, N;
     int maxElementas;
     skaitomPusinam(M);
     spausdink(M, "Nuskaite");
     lyginu(M, maxElementas);
-
+    indeksas(M, N, maxElementas);
+    spausdink(N, "Max elementu indeksu masyvas");
+    trynimas(M, N);
+    spausdink(M, "aptrintas");
 
     in.close();
     out.close();
@@ -43,14 +47,24 @@ void spausdink(vector<int> A, string text){
 out<<endl;
 }
 void lyginu(vector<int> A, int &didziausias){
+    didziausias=A[0];
     for(int i=0; i<A.size(); i++){
         if(A[i]>didziausias) didziausias=A[i];
     }
 }
-void indeksas(vector<int> A, vector<int> &B, int &didziausias){
+void indeksas(vector<int> A, vector<int> &B, int didziausias){
     for(int i=0; i<A.size(); i++){
         if(A[i]==didziausias){
             B.push_back(i);
+
         }
+    }
+}
+void trynimas(vector<int> &A, vector<int> &B){
+    for(int i=0; i<B.size(); i++){
+            cout<<B[i];
+            A.erase(A.begin()+B[i]-i);
+
+
     }
 }
